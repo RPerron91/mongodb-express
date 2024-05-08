@@ -1,4 +1,4 @@
-import {Model, Schema, model} from 'mongoose'
+import {model, Schema} from 'mongoose'
 
 export interface Blog {
     Title: string,
@@ -24,7 +24,7 @@ const BlogSchema = new Schema({
     Date: {
         type: Date,
         default: Date.now
-    }
+    },
 })
 
-export const BlogPostModel = new Model(BlogSchema)
+export const BlogPostModel =  model("blogposts", BlogSchema)
